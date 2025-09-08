@@ -9,7 +9,7 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
   app.enableCors({
-    origin: 'http://localhost:4200',
+    origin: 'https://bail-app-66c5a.web.app/',
     credentials: true,
   });
 
@@ -17,6 +17,6 @@ async function bootstrap() {
 
   app.use('/upload', express.static(join(__dirname, '..', 'upload')));
 
-  await app.listen(process.env.PORT ?? 3000);
+  await app.listen(process.env.PORT ?? 8080);
 }
 bootstrap();
