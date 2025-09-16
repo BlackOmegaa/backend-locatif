@@ -9,7 +9,10 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
   app.enableCors({
-    origin: 'https://bail-app-66c5a.web.app',
+    origin: [
+      'https://bail-app-66c5a.web.app',
+      'http://localhost:4200'
+    ],
     credentials: true,
   });
 
