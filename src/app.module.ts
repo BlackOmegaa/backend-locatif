@@ -11,6 +11,7 @@ import { BailModule } from './bail/bail.module';
 import { PaiementLoyerModule } from './paiement-loyer/paiement-loyer.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { PowensModule } from './powens/powens.module';
+import { TtnModule } from './ttn/ttn.module';
 
 @Module({
   imports: [
@@ -38,7 +39,7 @@ import { PowensModule } from './powens/powens.module';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    AuthModule, BienModule, LocataireModule, BailModule, PaiementLoyerModule, DashboardModule, PowensModule
+    AuthModule, BienModule, LocataireModule, BailModule, PaiementLoyerModule, DashboardModule, PowensModule, TtnModule
   ],
   providers: [PrismaService]
 })
