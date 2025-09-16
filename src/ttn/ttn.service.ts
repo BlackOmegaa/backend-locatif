@@ -27,6 +27,13 @@ export class TtnService {
         });
     }
 
+    async getLastUplink() {
+        return this.prisma.uplink.findFirst({
+            orderBy: { receivedAt: 'desc' },
+        });
+    }
+
+
     async getLastTemperature() {
         const last = await this.prisma.uplink.findFirst({
             orderBy: { receivedAt: 'desc' },

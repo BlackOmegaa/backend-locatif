@@ -12,11 +12,14 @@ export class TtnController {
         return this.uplinkService.saveUplink(body);
     }
 
-    // Endpoint pour ton dashboard Angular
     @Get('last')
     async getLast() {
-        return { temperature: await this.uplinkService.getLastTemperature() };
+        const last = await this.uplinkService.getLastUplink();
+        return {
+            temperature: last?.temperature ?? null
+        };
     }
+
 
     // Pour récupérer historique (graphes)
     @Get()
