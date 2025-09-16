@@ -12,12 +12,13 @@ export class TtnService {
             data: {
                 deviceId: data.end_device_ids.device_id,
                 receivedAt: new Date(data.received_at),
-                temperature: uplinkMsg?.decoded_payload?.temperature ?? null,
+                temperature: uplinkMsg?.decoded_payload?.temperature_0 ?? null,
                 humidity: uplinkMsg?.decoded_payload?.humidity ?? null,
                 rawPayload: uplinkMsg,
             },
         });
     }
+
 
     async getLastUplinks(limit = 10) {
         return this.prisma.uplink.findMany({
@@ -32,4 +33,6 @@ export class TtnService {
         });
         return last?.temperature ?? null;
     }
+
+
 }
