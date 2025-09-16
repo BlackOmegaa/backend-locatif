@@ -126,3 +126,15 @@ model PaiementLoyer {
   locataire    Locataire @relation(fields: [locataireId], references: [id], onDelete: Cascade)
   locataireId  Int
 }
+
+model Uplink {
+  id          Int      @id @default(autoincrement())
+  deviceId    String
+  receivedAt  DateTime
+  temperature Float?
+  humidity    Float?
+  rawPayload  Json
+
+  @@index([deviceId])
+}
+

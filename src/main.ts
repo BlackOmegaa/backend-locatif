@@ -1,29 +1,22 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import { NestExpressApplication } from '@nestjs/platform-express';
+import { join } from 'path';
+import * as express from 'express';
+
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-
-  const whitelist = [
-    'https://bail-app-66c5a.web.app',
-    'https://bail-app-66c5a.firebaseapp.com',
-    'http://localhost:4200',
-    'http://localhost:5173',
-  ];
+  const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
   app.enableCors({
-    origin: (origin, callback) => {
-      // Autorise les clients non navigateurs (Postman, curl) qui n’envoient pas d’origin
-      if (!origin) return callback(null, true);
-      if (whitelist.includes(origin)) return callback(null, true);
-      return callback(new Error(`Origin non autorisée: ${origin}`), false);
-    },
+    origin: 'https://bail-app-66c5a.web.app',
     credentials: true,
-    methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    exposedHeaders: ['Content-Disposition'],
   });
 
-  await app.listen(8080);
+
+
+  app.use('/upload', express.static(join(__dirname, '..', 'upload')));
+
+  await app.listen(process.env.PORT ?? 8080);
 }
 bootstrap();
