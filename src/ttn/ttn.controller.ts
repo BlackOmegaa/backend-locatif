@@ -17,7 +17,9 @@ export class TtnController {
         const last = await this.uplinkService.getLastUplink();
         return {
             temperature: last?.temperature ?? null,
-            humidity: last?.humidity ?? null
+            humidity: last?.humidity ?? null,
+            pressure: last?.pressure ?? null,
+            gas: last?.gas ?? null
         };
     }
 

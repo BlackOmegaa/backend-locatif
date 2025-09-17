@@ -132,6 +132,8 @@ model Uplink {
   deviceId    String
   receivedAt  DateTime
   temperature Float?
+  pressure    Float?
+  gas         Float?
   humidity    Float?
   rawPayload  Json
 
