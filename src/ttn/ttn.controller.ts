@@ -16,9 +16,11 @@ export class TtnController {
     async getLast() {
         const last = await this.uplinkService.getLastUplink();
         return {
-            temperature: last?.temperature ?? null
+            temperature: last?.temperature ?? null,
+            humidity: last?.humidity ?? null
         };
     }
+
 
 
     // Pour récupérer historique (graphes)
