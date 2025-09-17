@@ -12,7 +12,7 @@ export class TtnService {
             data: {
                 deviceId: data.end_device_ids.device_id,
                 receivedAt: new Date(data.received_at),
-                temperature: uplinkMsg?.decoded_payload?.temperature_0 ?? null,
+                temperature: uplinkMsg?.decoded_payload?.temperature ?? null,
                 humidity: uplinkMsg?.decoded_payload?.humidity ?? null,
                 rawPayload: uplinkMsg,
             },
