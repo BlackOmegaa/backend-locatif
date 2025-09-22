@@ -14,7 +14,7 @@ export class SmsService {
 
     async sendSmsAlert(value: number) {
         return this.client.messages.create({
-            body: `⚠️ Alerte qualité de l'air critique : ${value}`,
+            body: `⚠️ Alerte qualité de l'air critique ! Restez chez vous pour éviter tout risque. Valeur détectée: ${value}`,
             from: "+12272382860", // ton numéro Twilio trial
             to: "+33602449574",    // ton numéro vérifié
         });
