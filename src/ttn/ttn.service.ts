@@ -14,7 +14,7 @@ export class TtnService {
                 receivedAt: new Date(data.received_at),
                 temperature: uplinkMsg?.decoded_payload?.temperature ?? null,
                 humidity: uplinkMsg?.decoded_payload?.humidity ?? null,
-                pressure: uplinkMsg?.decoded_payload?.pressure ?? null,
+                pressure: uplinkMsg?.decoded_payload?.tvoc ?? null,
                 gas: uplinkMsg?.decoded_payload?.gas ?? null,
                 rawPayload: uplinkMsg,
             },
