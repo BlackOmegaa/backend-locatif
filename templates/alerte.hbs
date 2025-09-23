@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alerte Qualité de l'air</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9fafb;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            padding: 30px 40px;
+        }
+
+        h1 {
+            color: #b91c1c;
+            font-size: 36px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 16px;
+            color: #374151;
+            line-height: 1.6;
+        }
+
+        .alert-block {
+            margin-top: 20px;
+            padding: 20px;
+            border-left: 5px solid #b91c1c;
+            background-color: #fef2f2;
+            border-radius: 6px;
+        }
+
+        .alert-value {
+            font-size: 22px;
+            font-weight: bold;
+            color: #b91c1c;
+        }
+
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 13px;
+            color: #9ca3af;
+        }
+
+        .logo {
+            text-align: center;
+            font-size: 30px;
+            font-weight: 800;
+            color: #01296a;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="logo">Nuvity</h2>
+        <h1>Alerte Qualité de l'air</h1>
+
+        <p>Bonjour,</p>
+        <p>Nos capteurs ont détecté une valeur critique de qualité de l'air. Merci de prendre les mesures nécessaires
+            pour garantir votre sécurité.</p>
+
+        <div class="alert-block">
+            <p><strong>Valeur détectée :</strong> <span class="alert-value">{{ value }}</span></p>
+        </div>
+
+        <p>Nous vous tiendrons informé si la situation persiste ou s’aggrave.</p>
+
+        <div class="footer">
+            &copy; 2025 Nivalis. Tous droits réservés.
+        </div>
+    </div>
+</body>
+
+</html>

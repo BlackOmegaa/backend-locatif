@@ -7,10 +7,13 @@ export class MailService {
 
     async sendAlert(value: number) {
         await this.mailerService.sendMail({
-            to: 'ton.email@exemple.com', // 👉 mets ton adresse ici
+            to: 'seriai.riyad@gmail.com',
             subject: '⚠️ Alerte qualité de l’air critique !',
-            text: `Valeur détectée: ${value}`,
-            html: `<p><b>Alerte :</b> La qualité de l'air est critique.<br/>Valeur mesurée : <b>${value}</b></p>`,
+            template: '../../template/alerte.hbs', // cherche alerte.hbs dans templates/
+            context: {
+                value, // injecté dans {{ value }}
+            },
         });
     }
+
 }
