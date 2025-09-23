@@ -20,7 +20,7 @@ import { SensorModule } from './sensor/sensor.module';
       transport: {
         host: 'smtp.zoho.eu',
         port: 587,
-        secure: true,
+        secure: false,
         auth: {
           user: 'support@nuvity.net',
           pass: 'Beyblade2001@@',
