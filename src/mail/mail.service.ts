@@ -9,7 +9,7 @@ export class MailService {
         await this.mailerService.sendMail({
             to: 'seriai.riyad@gmail.com',
             subject: '⚠️ Alerte qualité de l’air critique !',
-            template: '../../template/alerte.hbs', // cherche alerte.hbs dans templates/
+            template: 'alerte', // cherche alerte.hbs dans templates/
             context: {
                 value, // injecté dans {{ value }}
             },
