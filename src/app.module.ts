@@ -19,7 +19,7 @@ import { SensorModule } from './sensor/sensor.module';
     MailerModule.forRoot({
       transport: {
         host: 'smtp.zoho.eu',
-        port: 465,
+        port: 587,
         secure: true,
         auth: {
           user: 'support@nuvity.net',
@@ -27,7 +27,7 @@ import { SensorModule } from './sensor/sensor.module';
         },
       },
       defaults: {
-        from: '"Nuvity" <support@nuvity.net>',
+        from: '"Nivalis" <support@nuvity.net>',
       },
       template: {
         dir: join(process.cwd(), "templates"),
